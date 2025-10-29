@@ -6,39 +6,39 @@
  - [Создание проекта](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev5.md)
  - [Просмотр кода игры](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev6.md)
 
-## 모드 설정창 
-![설정창](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/img/setting.png?raw=true)   
-위 사진처럼 모드 설정창이 필요하고 이를 저장하는 기능이 필요할때가 있습니다   
-이떄 UnityModManager.ModEntry에 `OnGUI`와 `OnSaveGUI`를 사용합니다.
+## Окно настроек мода
+![Окно настроек](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/img/setting.png?raw=true)  
+Иногда требуется окно настроек мода, как на изображении выше, с возможностью сохранения.
+В этом случае используйте `OnGUI` и `OnSaveGUI` в UnityModManager.ModEntry. 
 
 ## 1. OnGUI
-[프로젝트 기본 설정](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev1.md)에서 만들었던 Main.cs로 돌아가고 `OnGUI` 를 만들어 줍니다. 
+Вернитесь к файлу Main.cs, созданному в [Основах проекта](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev1.md), и создайте `OnGUI`.
 ```cs
 private static void OnGUI(UnityModManager.ModEntry modEntry)
 {
 }
 
 ```
-`OnGUI`안에는 GUI보단 GUILayout을 쓰는 것을 추천합니다.  
-나머지는 [앞 페이지](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev3.md)에서 했던거와 같이 해주시면 됩니다.
+Я рекомендую использовать GUILayout вместо GUI в `OnGUI`.
+В остальном выполните те же действия, что и на предыдущей странице.
 
 ## 2. OnSaveGUI
-`ShowBPM`처럼 뭔가를 저장해야할 때가 생길때 OnSaveGUI를 씁니다.    
-마찬가지로 Main.cs에 `OnSaveGUI`를 추가합니다.
+Если вам нужно что-то сохранить, например, `ShowBPM`, используйте OnSaveGUI.
+Аналогично добавьте `OnSaveGUI` в Main.cs.
 ```cs
 private static void OnSaveGUI(UnityModManager.ModEntry modEntry)
 {
 }
 ```
-그리고 대충 Setting 이라고 이름짓고 새 클래스를 생성합니다.   
-새로 만든 이 클래스를 UnityModManager.ModSettings에 상속하고 아래와 같이 몇개를 추가합니다
+Затем создайте новый класс, назвав его Setting.
+Наследуйте этот недавно созданный класс от UnityModManager.ModSettings и добавьте несколько элементов, как показано ниже.
 ```cs
 public class Setting : UnityModManager.ModSettings
 {
-  //타입은 임시로 해둔거지 꼭 이렇게 하라는건 아닙니다
-  public string 원하는설정이름 = 기본값;
-  public bool 원하는설정이름2 = 기본값2;
-  public int 원하는설정이름3 = 기본값3;
+  //Тип временный, но не обязательный.
+  public string desiredsettingname = default;
+  public bool desiredsettingname2 = default2;
+  public int desiredsettingname3 = default3;
 
   public override void Save(UnityModManager.ModEntry modEntry) {
     var filepath = GetPath(modEntry);
@@ -57,20 +57,20 @@ public class Setting : UnityModManager.ModSettings
   
 }
 ```
-다시 Main.cs로 돌아와 ```public static Setting setting;```라는 전역변수를 하나 생성합니다    
-`Setup`에는 아래를 추가하고
+Вернитесь в Main.cs и создайте глобальную переменную с именем ```public static Setting setting;```.
+Добавьте следующее в `Setup`:
 ```cs
 setting = new Setting();
 setting = UnityModManager.ModSettings.Load<Setting>(modEntry);
 ```
-`OnSaveGUI`에는 ```setting.Save(modEntry);```를 추가합니다
+Добавьте ```setting.Save(modEntry);``` в `OnSaveGUI`
 
-## 3. 적용
-정말 간단하게 `OnToggle`에서 
+## 3. Приложение (?)
+Очень просто, в `OnToggle`
 ```cs
 modEntry.OnGUI = OnGUI;
 modEntry.OnSaveGUI = OnSaveGUI;
 ```
-를 추가하시면 적용이 완료됩니다.
+После его добавления заявка (?) будет завершена.
 
 [[⬅]](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev3.md) [[➡]](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev5.md) (4/6)
