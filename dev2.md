@@ -107,7 +107,7 @@ public static class PatchClass {
   }
 }
 ```
- - `__result`, 원본 메소드의 리턴값을 바꿀수 있습니다.
+ - `__result`, вы можете изменить возвращаемое значение исходного метода.
 ```c#
 public class OriginalClass {
   public int Add(int a, int b){
