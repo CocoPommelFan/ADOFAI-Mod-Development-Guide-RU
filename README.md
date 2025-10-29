@@ -1,18 +1,30 @@
-# 얼불춤 모드 개발 가이드
+# Руководство по разработке модов для ADOFAI (Русская версия)
+> ⚠️ **Примечание**: Это неофициальный перевод оригинального руководства
 
-## 잠깐만요!
- 혹시 모드 설치 방법을 찾는거라면 [UMM 설치 가이드](https://github.com/CrackThrough/ADOFAI-Mod-Installation-Guide/blob/main/kor/use-1.md) 와 [모드 적용 가이드](https://github.com/CrackThrough/ADOFAI-Mod-Installation-Guide/blob/main/kor/use-2.md)를 참고해주세요
+> ⚠️ **참고**: 이것은 원본 매뉴얼의 비공식 번역입니다. (by Google Translator)
+## Внимание!
+
+ Если вы ищете как устанавливать моды, пожалуйста, обратитесь к [Руководство по установке UMM](https://github.com/CrackThrough/ADOFAI-Mod-Installation-Guide/blob/main/kor/use-1.md) и [Руководство по применению мода](https://github.com/CrackThrough/ADOFAI-Mod-Installation-Guide/blob/main/kor/use-2.md).
     
-Sorry this guide does not support English
+
+## Оригинальный репозиторий
+[FLOWERs-Modding/ADOFAI-Mod-Development-Guide](https://github.com/FLOWERs-Modding/ADOFAI-Mod-Development-Guide)
  
-## 템플릿
-[이 템플릿](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/raw/main/ModTemplate.zip)을 보면서 가이드를 보면 이해하기 쉬울거에요
+## Шаблон
+[Шаблон](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/raw/main/ModTemplate.zip), Вам будет легче понять это, если вы посмотрите руководство.
+
+## Авторы оригинала
+- [FLOWERs-Modding](https://github.com/FLOWERs-Modding)
+
+## Переводчик
+- [fallen](https://github.com/CocoPommelFan)
+- Google Translator
  
-## 목차
- - [프로젝트 기본 설정](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev1.md)
- - [메소드 패치](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev2.md)
- - [GUI 띄우기](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev3.md)
- - [모드 설정창](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev4.md)
- - [프로젝트 빌드](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev5.md)
- - [얼불춤 코드 보기](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev6.md)
+## Навигация
+ - [Настройки проекта](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev1.md)
+ - [Патч ???](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev2.md)
+ - [Запуск GUI](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev3.md)
+ - [Окно настроек режима ???](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev4.md)
+ - [Создание проекта](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev5.md)
+ - [Просмотр кода игры](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev6.md)
 
