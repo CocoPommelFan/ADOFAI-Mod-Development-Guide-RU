@@ -1,19 +1,18 @@
+## Навигация
+ - [Настройки проекта](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev1.md)
+ - [Патч ???](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev2.md)
+ - **Запуск GUI**
+ - [Окно настроек режима ???](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev4.md)
+ - [Создание проекта](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev5.md)
+ - [Просмотр кода игры](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev6.md)
 
-## 목차
- - [프로젝트 기본 설정](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev1.md)
- - [메소드 패치](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev2.md)
- - **GUI 띄우기**
- - [모드 설정창](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev4.md)
- - [프로젝트 빌드](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev5.md)
- - [얼불춤 코드 보기](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev6.md)
+## Запуск графического интерфейса
+Для запуска графического интерфейса необходимо указать файлы `UnityEngine.dll`, `UnityEngine.CoreModule.dll`, `UnityEngine.IMGUIModule.dll` и `UnityEngine.UI.dll`.
 
-## GUI 띄우기
- GUI를 띄우기 위해서는 `UnityEngine.dll`, `UnityEngine.CoreModule.dll`, `UnityEngine.IMGUIModule.dll`, `UnityEngine.UI.dll`을 참조해야 합니다
+## 1. Создать новый файл C#
 
-## 1. 새 C# 파일 생성
-
-[MonoBehaviour](https://docs.unity3d.com/ScriptReference/MonoBehaviour.html)를 상속하는 클래스를 하나 만들어야 합니다.    
-그리고 안에다가 `OnGUI`라는 메소드를 추가합니다.
+Вам необходимо создать класс, наследующий от [MonoBehaviour](https://docs.unity3d.com/ScriptReference/MonoBehaviour.html).
+Затем добавьте в него метод OnGUI.
 ```c#
 public class TestGUI : MonoBehaviour {
   public void OnGUI() {
@@ -22,66 +21,67 @@ public class TestGUI : MonoBehaviour {
 ```
 
 ## 2. GUI, GUILayout
-`GUI`와 `GUILayout`은 `OnGUI`에서만 가능한 친구들입니다       
-`GUI`는 따로 위치를 설정해줘야 하지만 `GUILayout`은 레이아웃에서 위치를 자동으로 설정해줍니다     
+`GUI` и `GUILayout` доступны только в `OnGUI`.
+`GUI` требует отдельного позиционирования, тогда как `GUILayout` автоматически устанавливает положение внутри макета.
      
-만약 `GUI`로 텍스트 하나를 추가한다고 치면 `Rect`를 이용해 위치와 크기를 설정해야합니다.    
+Если вы добавляете текст с помощью `GUI`, вам необходимо задать положение и размер с помощью `Rect`.  
 ```cs
 //GUI
-GUI.Label(new Rect(x, y, 가로크기, 세로크기), 텍스트);
+GUI.Label(new Rect(x, y, width, height), text);
 //GUILayout
 GUILayout.Label(텍스트);
 ```
-왼쪽위 기준으로 생성됩니다.   
-   
-버튼과 토글 또는 슬라이더같이 실시간으로 값이 변할수 있는 애들은 리턴값이 변한 값입니다
+Генерируется на основе верхнего левого угла.
+
+Для кнопок, переключателей или ползунков, значения которых могут изменяться в режиме реального времени, возвращаемым значением является изменённое значение.
 ```cs
-//버튼을 누르면 코드 실행
-if(GUI.Button(new Rect(x,y,가로,세로), 텍스트) {
-  //any code
+//Код, выполняемый при нажатии кнопки
+if(GUI.Button(new Rect(x,y,width,height)), text) {
+//любой код
 }
 
-float val = 값; //애는 전역변수로 설정
+float val = value; // Установить значение как глобальную переменную
 
-//슬라이더 값이 변하면 코드 실행
-float newVal = GUI.HorizontalSlider(new Rect(x,y,가로,세로),val,최소값,최대값);
+// Выполнить код при изменении значения ползунка
+float newVal = GUI.HorizontalSlider(new Rect(x,y,width,height),val,min,max);
 if(newVal!=val) {
-  val = newVal;
-  //any code
+val = newVal;
+// Любой код
 }
 ```
-이런식으로 값이 변할때 코드를 실행할 수 있습니다
-    
-메소드가 너무 많아 하나하나 설명하기 힘들 정도니 궁금하다면 [GUILayout 문서](https://docs.unity3d.com/ScriptReference/GUILayout.html)와 [GUI 문서](https://docs.unity3d.com/ScriptReference/GUI.html)를 참고해주세요
+Вы можете выполнить такой код при изменении значения.
+
+Существует так много методов, что сложно описать их все по отдельности. Если вам интересно, обратитесь к [документации GUILayout](https://docs.unity3d.com/ScriptReference/GUILayout.html) и [документации GUI](https://docs.unity3d.com/ScriptReference/GUI.html).
 
 ## 3. GUIStyle
-꼭 필요는 없지만 해당 UI를 꾸미고 싶다면 써야합니다
- - `<GUIStyle>.normal.textColor`로 텍스트 색상 지정
- - `<GUIStyle>.fontSize`로 텍스트 크기 지정
- - `<GUIStyle>.font`로 텍스트 폰트 지정
+Это не обязательно, но его следует использовать, если вы хотите задать стиль пользовательского интерфейса.
+- Установите цвет текста с помощью `<GUIStyle>.normal.textColor`
+- Установите размер текста с помощью `<GUIStyle>.fontSize`
+- Установите шрифт текста с помощью `<GUIStyle>.font`
 ```cs
 GUIStyle textStyle = new GUIStyle();
 textStyle.fontSize = 50;
 textStyle.alignment = TextAnchor.UpperCenter;
 textStyle.normal.textColor = Color.white;
 textStyle.font = RDString.GetFontDataForLanguage(RDString.language).font;
-GUI.Label(new Rect(x,y,가로,세로), 텍스트, textStyle);
+GUI.Label(new Rect(x,y,width,height), text, textStyle);
 ```
 
-텍스트뿐만 아니라 다른 것도 가능하고 더욱 자세한건 [문서](https://docs.unity3d.com/ScriptReference/GUIStyle.html)를 참고해주세요
+Это может быть что угодно, кроме текста. Более подробную информацию см. в [документации](https://docs.unity3d.com/ScriptReference/GUIStyle.html).
 
-## 4. 생성
+## 4. Создание
 ```cs
 TestGUI test = new GameObject().AddComponent<TestGUI>();
 UnityEngine.Object.DontDestroyOnLoad(test);
 ```
-반대로 없앨때는
+С другой стороны, когда вы его удалите,
 ```cs
 UnityEngine.Object.DestroyImmediate(test);
 ```
 
-## 팁
-`OnGUI`는 비교적 렉이 조금 걸립니다. 하지만 쉽게 UI를 생성할 수 있습니다.    
-본인이 어느정도 실력이 쌓였다 생각하면 `OnGUI`대신 렉이 덜 걸리는 `Canvas`로 UI를 띄워보세요
+## Совет
+OnGUI может быть относительно медленным, но позволяет легко создавать пользовательский интерфейс.
+
+Набравшись опыта, попробуйте использовать Canvas вместо OnGUI — это уменьшит задержку.
 
 [[⬅]](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev2.md) [[➡]](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev4.md) (3/6)
