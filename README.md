@@ -1,7 +1,7 @@
 # Руководство по разработке модов для ADOFAI (Русская версия)
 > ⚠️ **Примечание**: Это неофициальный перевод оригинального руководства
 
-> ⚠️ **참고**: 이것은 원본 매뉴얼의 비공식 번역입니다. (by Google Translator)
+> ⚠️ **참고**: 이것은 원본 매뉴얼의 비공식 번역입니다. (via Google Translator)
 ## Внимание!
 
  Если вы ищете как устанавливать моды, пожалуйста, обратитесь к [Руководство по установке UMM](https://github.com/CrackThrough/ADOFAI-Mod-Installation-Guide/blob/main/kor/use-1.md) и [Руководство по применению мода](https://github.com/CrackThrough/ADOFAI-Mod-Installation-Guide/blob/main/kor/use-2.md).
