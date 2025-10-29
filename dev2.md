@@ -1,16 +1,16 @@
 ## Навигация
- - [Настройки проекта](https://github.com/NoBrain0917/)
- - **Патч ???**
- - [Запуск GUI](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev3.md)
- - [Окно настроек мода](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev4.md)
- - [Сборка проекта](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev5.md)
- - [Просмотр кода игры](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev6.md)
+ - [Настройки проекта](https://github.com/CocoPommelFan/ADOFAI-Mod-Development-Guide-RU/blob/main/dev1.md)
+ - **Патч игры**
+ - [Запуск GUI](https://github.com/CocoPommelFan/ADOFAI-Mod-Development-Guide-RU/blob/main/dev3.md)
+ - [Окно настроек мода](https://github.com/CocoPommelFan/ADOFAI-Mod-Development-Guide-RU/blob/main/dev4.md)
+ - [Сборка проекта](https://github.com/CocoPommelFan/ADOFAI-Mod-Development-Guide-RU/blob/main/dev5.md)
+ - [Просмотр кода игры](https://github.com/CocoPommelFan/ADOFAI-Mod-Development-Guide-RU/blob/main/dev6.md)
 
 # Патч
 Все моды используют `0Harmony.dll` для исправления (изменения) методов (функций).     
 
 # Добавляем новый класс
-![Выбор класса](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/raw/main/img/class.png?raw=true)    
+![Выбор класса](https://github.com/CocoPommelFan/ADOFAI-Mod-Development-Guide-RU/raw/main/img/class.png?raw=true)    
 Выберите название проекта (я назвал свой ClassLibrary2) -> Добавить -> Новый элемент
 <br>
 ![Выберите элемент](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/raw/main/img/cselect.png?raw=true)
@@ -134,7 +134,7 @@ public static class PatchTest {
 Причина, по которой мы используем `ref` в `__result`, заключается в том, что нам нужно использовать ключевое слово `ref` для передачи измененного значения.
 
 ## «И как же мне найти класс и метод для "???"?»
-Я объясню пошагово, но если хотите узнать всё сразу, см. [здесь](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev6.md).
+Я объясню пошагово, но если хотите узнать всё сразу, см. [здесь](https://github.com/CocoPommelFan/ADOFAI-Mod-Development-Guide-RU/blob/main/dev6.md).
 
 ### Совет
 При загрузке приватных полей вместо параметров можно использовать рефлексию.
@@ -147,4 +147,4 @@ typeof(T).GetField(Method_Name, AccessTools.all)?.GetValue(Class_Instance);
 
 
 
-[[⬅]](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev1.md) [[➡]](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev3.md) (2/6)
+[[⬅]](https://github.com/CocoPommelFan/ADOFAI-Mod-Development-Guide-RU/blob/main/dev1.md) [[➡]](https://github.com/CocoPommelFan/ADOFAI-Mod-Development-Guide-RU/blob/main/dev3.md) (2/6)

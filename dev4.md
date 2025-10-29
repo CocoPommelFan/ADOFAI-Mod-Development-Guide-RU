@@ -1,10 +1,10 @@
 ## Навигация
- - [Настройки проекта](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev1.md)
- - [Патч ???](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev2.md)
+ - [Настройки проекта](https://github.com/CocoPommelFan/ADOFAI-Mod-Development-Guide-RU/blob/main/dev1.md)
+ - [Патч игры](https://github.com/CocoPommelFan/ADOFAI-Mod-Development-Guide-RU/blob/main/dev2.md)
  - [Запуск GUI](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev3.md)
  - **Окно настроек мода**
- - [Сборка проекта](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev5.md)
- - [Просмотр кода игры](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev6.md)
+ - [Сборка проекта](https://github.com/CocoPommelFan/ADOFAI-Mod-Development-Guide-RU/blob/main/dev5.md)
+ - [Просмотр кода игры](https://github.com/CocoPommelFan/ADOFAI-Mod-Development-Guide-RU/blob/main/dev6.md)
 
 ## Окно настроек мода
 ![Окно настроек](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/img/setting.png?raw=true)  
@@ -12,7 +12,7 @@
 В этом случае используйте `OnGUI` и `OnSaveGUI` в UnityModManager.ModEntry. 
 
 ## 1. OnGUI
-Вернитесь к файлу Main.cs, созданному в [Основах проекта](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev1.md), и создайте `OnGUI`.
+Вернитесь к файлу Main.cs, созданному в [Основах проекта](https://github.com/CocoPommelFan/ADOFAI-Mod-Development-Guide-RU/blob/main/dev1.md), и создайте `OnGUI`.
 ```cs
 private static void OnGUI(UnityModManager.ModEntry modEntry)
 {
@@ -73,4 +73,4 @@ modEntry.OnSaveGUI = OnSaveGUI;
 ```
 После его добавления заявка (?) будет завершена.
 
-[[⬅]](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev3.md) [[➡]](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev5.md) (4/6)
+[[⬅]](https://github.com/CocoPommelFan/ADOFAI-Mod-Development-Guide-RU/blob/main/dev3.md) [[➡]](https://github.com/CocoPommelFan/ADOFAI-Mod-Development-Guide-RU/blob/main/dev5.md) (4/6)
