@@ -11,8 +11,9 @@
 [FLOWERs-Modding/ADOFAI-Mod-Development-Guide](https://github.com/FLOWERs-Modding/ADOFAI-Mod-Development-Guide)
  
 ## Шаблон
+> ❗Рекомендую использовать, возможно, более стабильный и новый [Шаблон](https://github.com/PizzaLovers007/AdofaiModTemplate.git) от [PizzaLovers007](https://github.com/PizzaLovers007)
+
 [Шаблон](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/raw/main/ModTemplate.zip), Вам будет легче понять это, если вы посмотрите руководство.  
-Так же можно использовать, возможно, более стабильный и новый [Шаблон](https://github.com/PizzaLovers007/AdofaiModTemplate.git) от [PizzaLovers007](https://github.com/PizzaLovers007)
 
 ## Автор оригинала
 - [FLOWERs-Modding](https://github.com/FLOWERs-Modding)

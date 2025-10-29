@@ -1,42 +1,53 @@
-# 목차
- - [프로젝트 기본 설정](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev1.md)
- - [메소드 패치](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev2.md)
- - [GUI 띄우기](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev3.md)
- - [모드 설정창](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev4.md)
- - **프로젝트 빌드**
- - [얼불춤 코드 보기](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev6.md)
+## Навигация
+ - [Настройки проекта](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev1.md)
+ - [Патч ???](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev2.md)
+ - [Запуск GUI](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev3.md)
+ - [Окно настроек мода](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev4.md)
+ - **Сборка проекта**
+ - [Просмотр кода игры](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/dev6.md)
 
-## 프로젝트 빌드
-모드를 다 만들었다면 이제 프로젝트를 빌드해야합니다.
+## Сборка проекта
+После создания всех модов необходимо собрать проект.
+> В шаблоне от [PizzaLovers007](https://github.com/PizzaLovers007) см. [README.md](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/README.md) есть .bat файл для сборки проекта в .zip
 
-## 1. 빌드
-![빌드](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/raw/main/img/build.png?raw=true)     
-맨 위 탭들에서 `빌드`를 누른 후 `솔루션 빌드`를 누르면 빌드가 됩니다.     
-이게 귀찮다면 `Ctrl` + `Shift` + `B`를 누르면 바로 빌드가 됩니다.    
+## 1. Сборка
+> В шаблоне от [PizzaLovers007](https://github.com/PizzaLovers007) см. [README.md](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/README.md) есть батник для сборки мода в сразу в .zip с info.json, так что этот способ можно пропустить
+
+![Сборка](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/raw/main/img/build.png?raw=true)
+Нажмите «Сборка» на верхней вкладке, затем «Сборка решения», чтобы начать сборку.
+Если это слишком сложно, нажмите «Ctrl» + «Shift» + «B», чтобы начать сборку немедленно. 
 <br>
-![성공](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/raw/main/img/comp.png?raw=true)
-위 사진처럼    
-`성공 1, 실패 0` 뜬다면 빌드 성공, 아니면 빌드 실패입니다   
-빌드가 실패되도 문제되는 내용을 보여주니 차근차근 해보길 바랍니다    
-<br>
-빌드된 dll 파일은 `<프로젝트경로>/bin/Debug/프로젝트이름.dll`로 생깁니다.
+![Успех](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/raw/main/img/comp.png?raw=true)
+Как показано на изображении выше, если отображается сообщение «1 успешно, 0 неудач», сборка прошла успешно. В противном случае сборка не удалась.
+Даже если сборка завершится неудачей, проблема всё равно будет отображаться, поэтому, пожалуйста, устраняйте её поэтапно.
 
-## 2. Info.json 작성
-UMM이 모드를 읽기 위해서는 Info.json이라는게 필요합니다    
-바탕화면에서 우클릭 -> 새로 만들기 -> 텍스트 문서
-방금 만든 문서 이름을 Info.json이라고 짓습니다.
-|키|설명|
+Созданному DLL-файлу будет присвоено имя «<путь к проекту>/bin/Debug/имя_проекта.dll».
+
+## 2. Создайте Info.json
+> Info.json уже присутствует в шаблоне от [PizzaLovers007](https://github.com/PizzaLovers007) см. [README.md](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/blob/main/README.md) и так же собирается в .zip
+
+UMM необходим Info.json для чтения мода.
+Щёлкните правой кнопкой мыши по рабочему столу -> Создать -> Текстовый документ
+Назовите только что созданный документ «Info.json».
+|Ключ|Описание|
+
 |------|---|
-|Id|로그에 표시되는 이름, 모드를 구별하는 Id|
-|DisplayName|실제로 표시되는 모드의 이름|
-|Author|모드 개발자의 이름|
-|Version|표시되는 모드의 버전|
-|AssemblyName|불러올 어셈블리의 이름|
-|EntryMethod|실행할 어셈블리의 메소드|   
 
-가장 첫페이지에서 했던 Setup이 여기에 들어갑니다.
+|Id| Имя, отображаемое в журнале, идентификатор, идентифицирующий мод|
 
-### 예시
+|DisplayName| Фактическое отображаемое имя мода| 
+
+|Author| Имя разработчика мода| 
+
+|Version| Отображаемая версия мода| 
+
+|AssemblyName| Имя загружаемой сборки| 
+
+|EntryMethod| Выполняемый метод в сборке|
+
+Здесь находится установочный файл с первой страницы.
+
+### Пример
 ```json
 {
   "Id": "TestMOD",
@@ -49,26 +60,26 @@ UMM이 모드를 읽기 위해서는 Info.json이라는게 필요합니다
 ```
 다 작성했다면 저장합니다.
 
-## 3. 폴더 생성
-바탕화면에서 우클릭 -> 새로 만들기 -> 폴더    
-이름을 자기가 원하는 모드의 이름으로 해줍시다     
-    
-만든 폴더안에 들어가고, 우클릭 -> 새로 만들기 -> 폴더    
-이번에도 폴더의 이름을 자기가 원하는 모드의 이름으로 해줍니다     
-    
-그리고 그 폴더 안에다가 아까만든 Info.json 와 빌드한 어셈블리 파일을 여기로 옮깁니다.        
-그럼 최종적으로 폴더는   
-    
-모드이름<br>
-├── 모드이름<br>
-│  &nbsp; &nbsp; ├── Info.json<br>
-│  &nbsp; &nbsp; └── 모드이름.dll <br>
-<br>
-폴더를 가장 처음만든 바탕화면으로 돌아와 처음만든 폴더를 압축합니다   
+## 3. Создайте папку
+Щёлкните правой кнопкой мыши по рабочему столу -> Создать -> Папка
+Назовите её именем желаемого мода.
 
-## 4. 적용
-![적용](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/raw/main/img/apply.png?raw=true) <br>
-UMM을 키고 압축한 파일을 모드로 적용하면 끝
+Войдите в созданную папку, щёлкните правой кнопкой мыши -> Создать -> Папка
+Снова назовите папку именем желаемого мода.
+
+Переместите созданный ранее файл Info.json и файл сборки в эту папку.
+Итоговая папка должна выглядеть так: 
+    
+Имя мода<br>
+├── Имя мода<br>
+│ &nbsp; &nbsp; ├── Info.json<br>
+│ &nbsp; &nbsp; └── mod-name.dll <br>
+<br>
+Вернитесь на рабочий стол, где вы изначально создали папку, и сожмите созданную папку.
+
+## 4. Применить
+![Apply](https://github.com/NoBrain0917/ADOFAI-Mod-Development-Guide/raw/main/img/apply.png?raw=true) <br>
+Включите UMM и примените сжатый файл как мод.
 
 
 
